@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   flags.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skythoma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/20 12:44:40 by skythoma          #+#    #+#             */
-/*   Updated: 2019/08/20 12:44:42 by skythoma         ###   ########.fr       */
+/*   Created: 2019/08/29 03:22:57 by skythoma          #+#    #+#             */
+/*   Updated: 2019/08/29 03:22:59 by skythoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int main()
+void    all_flags(char *frmat, int *i, t_flags lwii)
 {
-    printf("%s", "hello");
-   // ft_printf(av[0]);
-    ft_printf("%s \n", "hello there %% !");
-
-    ft_printf("%hU\n", 4294967296);
-	printf("%lU", 4294967296);
-
-    return (0);
-}
+    while (frmat[*i] != '\0' && (frmat[*i] == '+' || frmat[*i] == '-' || frmat[*i] == '0' || frmat[*i] == ' ' || frmat[*i] == '#'))
+    {
+        if (frmat[*i] == '+')
+        {
+            
+        }
+    }
+} 

@@ -13,23 +13,23 @@
 #include "ft_printf.h"
 
 
-
-
-
+void    percent_s(va_list args, int *p)
+{
+    
+}
 
 int ft_printf(const char* format, ...)
 {
     int     char_count;
-    char    *printstr;
-    void    *stack_l;
+    int     print_int;
+    char    integer_str;
+    char    *print_str;
 
-    /* va_list args;        basically a pointer to an argument in variadic-arg array */
+    va_list  args;        /* basically a pointer to an argument in variadic-arg array */
 
-    /* va_start(args, format); "args" points at the first variadic-arg */
+    va_start(args, format); /* "args" points at the first variadic-arg */
 
     char_count = 0;
-    stack_l = &format;
-    stack_l = ((void **)stack_l) + 1;
     while (*str_parse)
     {
         if (*format == '\0')
@@ -38,12 +38,9 @@ int ft_printf(const char* format, ...)
             format++;
             char_count += 2;
         }
-        ft_putchar(*format);
-        format++;
-        char_count++;
     }
-    
-    /* va_end(args);*/
+
+    va_end(args);
 
     return (char_count);
 }

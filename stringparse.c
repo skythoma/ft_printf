@@ -12,17 +12,17 @@
 
 #include "ft_printf.h"
 
-int     spec_char_len(char *str, char c)
+int     spec_char_len(char *str, char c) /* gets the length until it hits a specific 'char' in 'str'*/
 {
     int i;
 
     i = 0;
     while (str[i] != '\0' && str[i] != c)
-        i++;
+        i++; 
     return (i);
 }
 
-int     variablelen(char *str)
+int     variablelen(char *str) /* Gets the length until one of the specifier characters, or the %. Meant to be used to see how long a variable starting with % is. */
 {
     int i;
 
