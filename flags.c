@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void    all_flags(char *frmat, int *i, t_flags lwii)
+/* void    all_flags(char *frmat, int *i, t_flags lwii)
 {
     while (frmat[*i] != '\0' && (frmat[*i] == '+' || frmat[*i] == '-' || frmat[*i] == '0' || frmat[*i] == ' ' || frmat[*i] == '#'))
     {
@@ -22,3 +22,4 @@ void    all_flags(char *frmat, int *i, t_flags lwii)
         }
     }
 } 
+*/

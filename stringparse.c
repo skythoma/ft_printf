@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int     spec_char_len(char *str, char c) /* gets the length until it hits a specific 'char' in 'str'*/
+int     spec_char_len(char *str, char c) /* gets the length of str until it hits a specific 'char' in 'str'*/
 {
     int i;
 

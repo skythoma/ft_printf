@@ -24,6 +24,19 @@ void    print_bighex(unsigned int n, int *p) /* '  */
 	}
 }
 
+void	print_integer(int i, int *lenptr)
+{
+	long l;
+
+	l = i;
+	if (l < 0)
+	{
+		l = -l;
+		ft_printchar((int)'-', lenptr);
+	}
+	ultoa_base(l, 10, lenptr); /* prints a base 10 int */
+}
+
 void	ft_putstrf(char const *str, int *p)
 {
 	int	x;
@@ -61,7 +74,7 @@ void    print_hex(unsigned int n, int *p)
 	}
 }
 
-void    print_str(va_list args, int *p)
+/* void    print_str(va_list args, int *p)
 {
     char    *string;
 
@@ -74,4 +87,4 @@ void    print_str(va_list args, int *p)
     }
     
 }
-
+*/

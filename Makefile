@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_printf.c main.c stringparse.c
+SRCS = ft_printf.c conversions.c printfuckery.c
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Wextra -Werror
 
 NAME = libftprintf.a
 
-LIBFT = libft/libft.h
+LIBFT = ./libft/*.c
 
 OBJS = *.o
 
@@ -29,11 +29,11 @@ $(NAME):
 	@ranlib $(NAME)
 
 clean:
-	@echo "\033[32m...\033[0m"
-	@rm -rf $(OBJS)
+	@echo "\033[32mCleaning up\033[0m"
+	@rm -f $(OBJS)
 
 fclean: clean
-	@echo "\033[32mclean \033[0m"
+	@echo "\033[32mFull clean\033[0m"
 	@rm -rf $(NAME)
 
 re: fclean all
