@@ -17,11 +17,13 @@ void    syntax(va_list args, char char_on_str, int *p)
 {
     if (char_on_str == 'c')
         ft_printchar(va_arg(args, int), p);
+    else if (char_on_str == 'X')
+        print_bighex(va_arg(args, unsigned int), p);
     else if (char_on_str == 's')
         ft_printstr(va_arg(args, char *), p);
-    else if (char_on_str == 'd' || char_on_str == 'i')
+    else if (char_on_str == 'd' || char_on_str == 'i' || char_on_str == 'D')
         print_integer(va_arg(args, int), p);
-    else if (char_on_str == 'u')
+    else if (char_on_str == 'u' || char_on_str == 'U')
         ultoa_base(va_arg(args, unsigned int), 10, p);
     else if (char_on_str == 'p')
     {
@@ -29,7 +31,7 @@ void    syntax(va_list args, char char_on_str, int *p)
         ultoa_base(va_arg(args, unsigned int), 10, p);
     }
     else if (char_on_str == 'o')
-        ultoa_base(va_arg(args, unsigned int), 8, p);
+        print_octal(va_arg(args, unsigned int), 8, p);
     else if (char_on_str == 'x')
         ultoa_base(va_arg(args, unsigned int), 16, p);
     else if (char_on_str == '%')

@@ -1,11 +1,11 @@
 #include "ft_printf.h"
 
-void    print_bighex(unsigned int n, int *p) /* '  */
+void    print_bighex(unsigned int n, int *p) /* 'H' */
 {
     if (n > 15)
 	{
-		print_hex((n / 16), p);
-		print_hex((n % 16), p);
+		print_bighex((n / 16), p);
+		print_bighex((n % 16), p);
 	}
 	else if (n < 10)
 	{
@@ -34,7 +34,21 @@ void	print_integer(int i, int *lenptr)
 		l = -l;
 		ft_printchar((int)'-', lenptr);
 	}
-	ultoa_base(l, 10, lenptr); /* prints a base 10 int */
+	ultoa_base(l, 10, lenptr); 
+}
+
+void	print_octal(unsigned int n, int *p)
+{
+	if (n > 7)
+	{
+		print_octal((n / 8), p);
+		print_octal((n % 8), p);
+	}
+	else
+	{
+		*p = *p + 1;
+		ft_putchar(n + '0');
+	}
 }
 
 void	ft_putstrf(char const *str, int *p)
@@ -74,17 +88,17 @@ void    print_hex(unsigned int n, int *p)
 	}
 }
 
-/* void    print_str(va_list args, int *p)
+void    print_str(char *s, int *p)
 {
     char    *string;
+	va_list	args;
 
     string = va_arg(args, char*);
     if (string != NULL)
-        ft_putstrf(string, p);
+        ft_printstr(string, p);
     else
     {
-        
-    }
-    
+		*p = *p + 6;
+		write(1, "(null)", 1);
+    }    
 }
-*/

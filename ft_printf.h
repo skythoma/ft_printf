@@ -23,23 +23,23 @@
 # define DIGITS "0123456789"
 # define PRECISION_DOT '.'
 # define MODIFIERS "hljz"
-# define H_MOD  
 
 #include "libft/libft.h"
 #include <stdarg.h> /* for variadic arguments */
 #include <stdio.h>
 #include <stdint.h>
-#include <wchar.h>
+#include <wchar.h> /* for wide characters + wide integer */
 #include <locale.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct them_flags /* all me flegs */
 {
-    int     p_flag; /* '+' flag */
-    int     min_flag; /* '-' flag */
-    int     spce_flag; /* ' ' flag */
-    int     hash_flg; /* '#' flag */
-    int     zero_flag; /* '0' flag */
+    bool     p_flag; /* '+' flag */
+    bool     min_flag; /* '-' flag */
+    bool     spce_flag; /* ' ' flag */
+    bool     hash_flg; /* '#' flag */
+    bool     zero_flag; /* '0' flag */
 }   t_flags;
 
 
@@ -61,4 +61,5 @@ void	            ft_putstrf(char const *str, int *p);
 void                ultoa_base(unsigned long num, int base, int *lenptr);
 void                print_integer(int i, int *lenptr);
 void                syntax(va_list args, char char_on_str, int *p);
+
 #endif
