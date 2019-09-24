@@ -48,11 +48,6 @@ char    *ft_itoa_base(int value, int base)
     return (ptr);
 }
 
-char    *ftoa(double n) /* float to ascii(string) */
-{
-    char    *flt;
-}
-
 char    *ft_itoa(int nbr)
 {
     char    store[11];
@@ -93,3 +88,28 @@ char    *ft_itoa(int nbr)
     ret[j] = '\0';
     return (ret);
 }
+
+void    ulltoa_base(unsigned long long num, int base) /* converting an unsigned long to str (ASCII) */
+ {
+     char    *tab;
+     unsigned long nbr; /* temp variable (holder) */
+     char    *str;
+     int i; /* indicates/represents size */
+
+     tab = "0123456789abcdef";
+     nbr = num;
+     i = 1;
+     while (nbr /= base)
+         i++;
+     if (!(str = (char *)malloc(sizeof(*str) * (i + 1)))) /* giving the __ a size  */
+         return ;
+     str[i] = '\0';
+     while (i--)
+     {
+         str[i] = tab[num % base];
+         num /= base;
+     }
+    //ft_printstr(str);
+     ft_putstr(str);
+     free(str);
+ }

@@ -24,6 +24,11 @@ void    print_bighex(unsigned int n, int *p) /* 'H' */
 	}
 }
 
+void	print_float(float n, int *lenptr)
+{
+
+}
+
 void	print_integer(int i, int *lenptr)
 {
 	long l;
@@ -61,7 +66,6 @@ void	ft_putstrf(char const *str, int *p)
 		ft_putchar(str[x]);
 		*p = *p + 1;
 	}
-
 }
 
 void    print_hex(unsigned int n, int *p)
@@ -101,4 +105,15 @@ void    print_str(char *s, int *p)
 		*p = *p + 6;
 		write(1, "(null)", 1);
     }    
+}
+
+void	print_format(char f)
+{
+	write(1, &f, 1);
+}
+
+void	print(int start, int end, char *format)
+{
+	while (start < end && format[start] != '\0')
+		print_format(format[start++]);
 }
