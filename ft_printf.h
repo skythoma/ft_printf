@@ -13,6 +13,9 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+# define LL_MAX  9223372036854775807 /* this is the largest of its range to hold(numbers nd stuff) */
+# define LL_MIN  -9223372036854775807 - 1 /* this is the lowest it can hold in this john(or whatever else) */
+
 # define CONVERSIONS
 # define FLAGS "+- #0"
 # define PLUSFLAG '+'       
@@ -54,7 +57,7 @@ typedef struct them_flags /* all me flegs */
     int      args;
     int      ret;
     int      len;
-    char     type;
+    char     type; /* the mf letter itself ( sSpdDioOuUxXcC ) */
 }   t_flags;
 
 

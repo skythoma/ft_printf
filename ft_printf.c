@@ -75,9 +75,9 @@ int ft_printf(const char* format, ...)
 
     va_start(args, format); /* "args" points at the first variadic-arg */
 
-    while (format[i])
+    while (format[i]) /* format represents the str that were "pointing to" */
     {
-        if (format[i] != '%')
+        if (format[i] != '%') /* checks for '%' on the string */
             print(start, i, format);
         else
         {
